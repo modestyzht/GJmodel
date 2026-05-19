@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+    height: 100vh;
+    background-color: #FFF8E8;
+  }
+
+  #root {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/60 backdrop-blur-md border border-white/80;
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl shadow-lg shadow-black/[0.04];
+  }
+
+  .glass-hover {
+    @apply transition-all duration-200 hover:bg-white/80 hover:shadow-xl hover:shadow-black/[0.06] hover:-translate-y-0.5;
+  }
+}
+
+@layer utilities {
+  .bg-agriculture {
+    background:
+      linear-gradient(175deg, #E8F5E0 0%, #F5F0E0 35%, #FFF8E8 60%, #F0F5E8 100%),
+      radial-gradient(ellipse 45% 40% at 85% 15%, rgba(246, 166, 35, 0.12) 0%, transparent 100%),
+      radial-gradient(ellipse 50% 35% at 15% 85%, rgba(69, 168, 107, 0.08) 0%, transparent 100%);
+  }
+}
